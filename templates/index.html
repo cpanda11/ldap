@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="container-fulid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <span>Enter User ID:</span>
+                    <input id="uid" type="text" onkeydown="serachGroupByUID(this)" style="height: 35px">
+                </div>
+                <div class="col-sm-8">
+                    <table class="table table-striped" style="overflow-y: hidden">
+                        <thead class="thead-dark">
+                            <th>List of groups User ID:</th>
+                        </thead>
+                        <tbod>
+                            <tr><th>Tomis</th></tr>
+                            <tr><th>Abraic</th></tr>
+                            <tr><th>Gunius Team</th></tr>
+                            <tr><th>Tomis</th></tr>
+                        </tbod>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                  <select class="form-control">
+                    <option value="+47"></option>
+                    <option value="+47">Central</option>
+                    <option value="+46">Eastern</option>
+                    <option value="+45">Southern</option>
+                  </select>
+                </div>
+                <div class="col-sm-5">
+                  <select class="form-control">
+                    <option value="+47"></option>
+                    <option value="+47">group_one</option>
+                    <option value="+46">group_two</option>
+                    <option value="+45">group_three</option>
+                    <option value="+45">group_four</option>
+                  </select>
+                </div>
+                <div class="col-sm-4">
+                  <input id="uid_f" type="text" style="height: 35px" placeholder="User ID">
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div align="center">
+            <h1>You are not logged in</h1>
+            <a href="{% url 'login' %}">login</a>
+        </div>
+    {% endif %}
+    <script type="text/javascript">
+
+    </script>
+    <script src="{% static 'main.js' %}"></script>
+
+{% endblock %}
